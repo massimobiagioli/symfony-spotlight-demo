@@ -1,0 +1,35 @@
+title: Device
+x-stoplight:
+  id: owgwjvk1cs4rx
+type: object
+description: Device Model
+examples:
+  - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+    name: A new device
+    address: 192.168.0.1
+    isActive: true
+    createdAt: '2019-08-24T14:15:22Z'
+    updatedAt: '2022-08-24T14:15:22Z'
+properties:
+  id:
+    type: string
+    description: Device Name
+    format: uuid
+  name:
+    type: string
+    description: Device Name
+  address:
+    type: string
+    format: ipv4
+    description: Device IP Address
+  isActive:
+    type: boolean
+    description: Device active?
+  createdAt:
+    type: string
+    format: date-time
+    description: Creation Date
+  updatedAt:
+    type: string
+    format: date-time
+    description: Update Date

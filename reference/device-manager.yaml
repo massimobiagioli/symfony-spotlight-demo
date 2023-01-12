@@ -50,7 +50,8 @@ paths:
         description: Device UUID
     get:
       summary: Your GET endpoint
-      tags: []
+      tags:
+        - device
       responses:
         '200':
           description: OK

@@ -39,6 +39,37 @@ paths:
       operationId: get-devices
       description: Get All Devices
     parameters: []
+  '/api/devices/{id}':
+    parameters:
+      - schema:
+          type: string
+          format: uuid
+        name: id
+        in: path
+        required: true
+        description: Device UUID
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+              examples:
+                Example 1:
+                  value:
+                    id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                    name: Device Name
+                    description: Device Description
+                    address: 192.168.0.1
+                    isActive: false
+                    createdAt: '2019-08-24T14:15:22Z'
+                    updatedAt: '2019-08-24T14:15:22Z'
+      operationId: get-api-devices-id
+      description: Get single device
 components:
   schemas:
     Device:
@@ -82,3 +113,5 @@ components:
           isActive: false
           createdAt: '2019-08-24T14:15:22Z'
           updatedAt: '2019-08-24T14:15:22Z'
+tags:
+  - name: device

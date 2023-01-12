@@ -1,0 +1,82 @@
+openapi: 3.1.0
+x-stoplight:
+  id: hgtnsf04izudz
+info:
+  title: device-manager
+  version: '1.0'
+  summary: Device Manager
+  description: Device Manager CRUD Examples
+  contact:
+    name: Massimo Biagioli
+servers:
+  - url: 'http://localhost:8000'
+    description: dev
+paths:
+  /devices:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Device'
+              examples:
+                Example 1:
+                  value:
+                    - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                      name: Device Name
+                      description: Device Description
+                      address: 192.168.0.1
+                      isActive: false
+                      createdAt: '2019-08-24T14:15:22Z'
+                      updatedAt: '2019-08-24T14:15:22Z'
+      operationId: get-devices
+      description: Get All Devices
+components:
+  schemas:
+    Device:
+      title: Device
+      x-stoplight:
+        id: enq74e9s8wf49
+      type: object
+      description: Device Model
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Devicde UUID
+        name:
+          type: string
+          description: Device Name
+        description:
+          type: string
+          description: Device Description
+        address:
+          type: string
+          format: ipv4
+          description: Device IP Address
+        isActive:
+          type: boolean
+          default: false
+          description: Is Device Active
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation Date
+        updatedAt:
+          type: string
+          format: date-time
+          description: Update Date
+      examples:
+        - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+          name: Device Name
+          description: Device Description
+          address: 192.168.0.1
+          isActive: false
+          createdAt: '2019-08-24T14:15:22Z'
+          updatedAt: '2019-08-24T14:15:22Z'

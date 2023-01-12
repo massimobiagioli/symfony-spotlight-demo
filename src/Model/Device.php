@@ -8,7 +8,7 @@ readonly class Device
     public function __construct(
         public string $id,
         public string $name,
-        public string $type,
+        public string $description,
         public string $address,
         public bool $isActive,
         public \DateTimeImmutable $createdAt,
